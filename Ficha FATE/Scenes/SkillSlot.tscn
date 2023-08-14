@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbs1o4gkl4u1c"]
+
+[ext_resource type="Script" path="res://Scripts/SkillSlot.gd" id="1_61ug3"]
+
+[node name="SkillSlot" type="PanelContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 40)
+offset_right = 171.0
+offset_bottom = 40.0
+script = ExtResource("1_61ug3")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+modulate = Color(1, 1, 1, 0.996078)
+self_modulate = Color(0, 0, 0, 0)
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Button Label" type="Label" parent="MarginContainer/PanelContainer"]
+layout_mode = 2

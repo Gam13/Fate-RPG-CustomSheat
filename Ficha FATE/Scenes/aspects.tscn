@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://cdy28apujwlgv"]
+
+[node name="Aspects" type="Panel"]
+custom_minimum_size = Vector2(320, 247)
+offset_left = 3.0
+offset_top = 201.0
+offset_right = 321.0
+offset_bottom = 448.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Conceito Chave" type="TextEdit" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(318, 40)
+layout_mode = 2
+placeholder_text = "Conceito Chave"
+text_direction = 1
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/Conceito Chave"]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 7.0
+offset_right = 319.0
+offset_bottom = 31.0
+
+[node name="Dificuldade" type="TextEdit" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Dificuldade"
+text_direction = 1
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/Dificuldade"]
+offset_left = 275.0
+offset_top = 7.0
+offset_right = 319.0
+offset_bottom = 31.0
+
+[node name="Aspecto" type="TextEdit" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Aspecto"
+text_direction = 1
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/Aspecto"]
+offset_left = 275.0
+offset_top = 7.0
+offset_right = 319.0
+offset_bottom = 31.0
+
+[node name="Aspecto2" type="TextEdit" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Aspecto"
+text_direction = 1
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/Aspecto2"]
+offset_left = 275.0
+offset_top = 7.0
+offset_right = 319.0
+offset_bottom = 31.0
+
+[node name="Aspecto3" type="TextEdit" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Aspecto"
+text_direction = 1
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/Aspecto3"]
+offset_left = 275.0
+offset_top = 7.0
+offset_right = 319.0
+offset_bottom = 31.0

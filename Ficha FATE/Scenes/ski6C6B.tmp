@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=3 uid="uid://3cac4hiom7nq"]
+
+[ext_resource type="Script" path="res://Scripts/Skills.gd" id="1_1qahv"]
+
+[sub_resource type="GDScript" id="GDScript_f4duq"]
+resource_name = "OptionControl"
+script/source = "extends OptionButton
+var skill_list = preload(\"res://Resourcers/skill_list_default.tres\")
+
+func _on_pressed():
+		get_popup().set_item_disabled(1,checkStress(preload(\"res://Resourcers/vitality.tres\")))
+		get_popup().set_item_disabled(2,checkStress(preload(\"res://Resourcers/sanity.tres\")))
+	
+func checkStress(skill : skill_data) -> bool:
+	for each in skill_list.Avarage:
+		if each == skill:
+			return true
+	for each in skill_list.Fair:
+		if each == skill:
+			return true
+	for each in skill_list.Good:
+		if each == skill:
+			return true
+	for each in skill_list.Great:
+		if each == skill:
+			return true
+	for each in skill_list.Superb:
+		if each == skill:
+			return true
+	return false
+
+
+func _on_skills_disabled_option(index):
+	get_popup().set_selected_id(0)
+"
+
+[node name="Skills" type="Panel"]
+offset_left = 327.0
+offset_top = 200.0
+offset_right = 1153.0
+offset_bottom = 447.0
+script = ExtResource("1_1qahv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 824.0
+offset_bottom = 246.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="SkillGrid" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+columns = 5
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 788.0
+offset_top = -41.0
+offset_right = 824.0
+offset_bottom = -7.0
+toggle_mode = true
+text = "+"
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 2
+offset_left = 520.0
+offset_top = -41.0
+offset_right = 783.0
+offset_bottom = -7.0
+item_count = 3
+popup/item_0/text = "Criar uma Nova Skill"
+popup/item_0/id = 0
+popup/item_1/text = "Criar Vitalidade"
+popup/item_1/id = 1
+popup/item_2/text = "Criar Vontade"
+popup/item_2/id = 2
+script = SubResource("GDScript_f4duq")
+
+[connection signal="disabledOption" from="." to="OptionButton" method="_on_skills_disabled_option"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="OptionButton" to="OptionButton" method="_on_pressed"]

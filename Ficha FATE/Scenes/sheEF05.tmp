@@ -1,0 +1,157 @@
+[gd_scene load_steps=5 format=3 uid="uid://p61lnr3670sg"]
+
+[ext_resource type="Script" path="res://Scripts/sheet.gd" id="1_6pnoa"]
+[ext_resource type="PackedScene" uid="uid://coh88h18tyywe" path="res://Scenes/stress.tscn" id="2_h7ss3"]
+[ext_resource type="PackedScene" uid="uid://3cac4hiom7nq" path="res://Scenes/skills.tscn" id="2_k5ebw"]
+[ext_resource type="PackedScene" uid="uid://cdy28apujwlgv" path="res://Scenes/aspects.tscn" id="4_mpr8a"]
+
+[node name="Ficha" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6pnoa")
+
+[node name="Identidade" type="Panel" parent="."]
+clip_contents = true
+layout_mode = 2
+anchor_right = 0.506
+anchor_bottom = 0.298
+offset_right = 0.0879517
+offset_bottom = -0.104004
+
+[node name="Name" type="TextEdit" parent="Identidade"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+offset_left = 11.0
+offset_top = 7.0
+offset_right = 576.0
+offset_bottom = 47.0
+placeholder_text = "Nome"
+text_direction = 1
+
+[node name="Description" type="TextEdit" parent="Identidade"]
+layout_mode = 2
+offset_left = 11.0
+offset_top = 49.0
+offset_right = 576.0
+offset_bottom = 189.0
+placeholder_text = "Descrição"
+wrap_mode = 1
+
+[node name="Skills" parent="." instance=ExtResource("2_k5ebw")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.283
+anchor_top = 0.309
+anchor_right = 1.0
+anchor_bottom = 0.691
+offset_left = -0.0160217
+offset_top = 0.26799
+offset_right = 0.0
+offset_bottom = -0.268036
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Consequence" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 455.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Consequence"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 9.0
+offset_right = 657.0
+offset_bottom = 186.0
+theme_override_constants/separation = 20
+
+[node name="SplitContainer" type="SplitContainer" parent="Consequence/VBoxContainer"]
+layout_mode = 2
+split_offset = 720
+
+[node name="leve" type="TextEdit" parent="Consequence/VBoxContainer/SplitContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Consequência Leve"
+text_direction = 1
+
+[node name="leve2" type="TextEdit" parent="Consequence/VBoxContainer/SplitContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Consequência Leve"
+text_direction = 1
+
+[node name="SplitContainer2" type="SplitContainer" parent="Consequence/VBoxContainer"]
+layout_mode = 2
+split_offset = 720
+
+[node name="moderada" type="TextEdit" parent="Consequence/VBoxContainer/SplitContainer2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Consequência Moderada"
+text_direction = 1
+
+[node name="moderada2" type="TextEdit" parent="Consequence/VBoxContainer/SplitContainer2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Consequência Moderada"
+text_direction = 1
+
+[node name="SplitContainer3" type="SplitContainer" parent="Consequence/VBoxContainer"]
+layout_mode = 2
+split_offset = 720
+
+[node name="grave" type="TextEdit" parent="Consequence/VBoxContainer/SplitContainer3"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Consequência Grave"
+text_direction = 1
+
+[node name="grave2" type="TextEdit" parent="Consequence/VBoxContainer/SplitContainer3"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Consequência Leve"
+text_direction = 1
+
+[node name="Aspects" parent="." instance=ExtResource("4_mpr8a")]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 0.0
+offset_top = -123.5
+offset_right = 318.0
+offset_bottom = 123.5
+grow_vertical = 2
+
+[node name="GrabbedSlot" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 26.0
+offset_bottom = 25.0
+
+[node name="EditSkillName" type="TextEdit" parent="."]
+visible = false
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+drag_and_drop_selection_enabled = false
+
+[node name="Stress" parent="." instance=ExtResource("2_h7ss3")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -191.0
+offset_bottom = 0.0
+grow_vertical = 0
+
+[connection signal="trashPressed" from="Skills" to="." method="_on_skills_trash_pressed"]
+[connection signal="update_stress" from="Skills" to="." method="_on_skills_update_stress"]
+[connection signal="text_set" from="EditSkillName" to="." method="_on_edit_skill_name_text_set"]

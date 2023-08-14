@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://dqyveldgmkrao"]
+
+[node name="Consequence" type="Panel"]
+offset_left = 464.0
+offset_top = 455.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 9.0
+offset_right = 657.0
+offset_bottom = 186.0
+theme_override_constants/separation = 20
+
+[node name="SplitContainer" type="SplitContainer" parent="VBoxContainer"]
+layout_mode = 2
+split_offset = 720
+
+[node name="leve" type="TextEdit" parent="VBoxContainer/SplitContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Consequência Leve"
+text_direction = 1
+
+[node name="leve2" type="TextEdit" parent="VBoxContainer/SplitContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Consequência Leve"
+text_direction = 1
+
+[node name="SplitContainer2" type="SplitContainer" parent="VBoxContainer"]
+layout_mode = 2
+split_offset = 720
+
+[node name="moderada" type="TextEdit" parent="VBoxContainer/SplitContainer2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Consequência Moderada"
+text_direction = 1
+
+[node name="moderada2" type="TextEdit" parent="VBoxContainer/SplitContainer2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Consequência Moderada"
+text_direction = 1
+
+[node name="SplitContainer3" type="SplitContainer" parent="VBoxContainer"]
+layout_mode = 2
+split_offset = 720
+
+[node name="grave" type="TextEdit" parent="VBoxContainer/SplitContainer3"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Consequência Grave"
+text_direction = 1
+
+[node name="grave2" type="TextEdit" parent="VBoxContainer/SplitContainer3"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Consequência Leve"
+text_direction = 1
+
+[node name="CheckButton" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 53.0
+offset_right = 42.0
+offset_bottom = 77.0
+rotation = -1.5708
+
+[node name="CheckButton2" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 111.0
+offset_right = 42.0
+offset_bottom = 135.0
+rotation = -1.5708
+
+[node name="CheckButton3" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 171.0
+offset_right = 42.0
+offset_bottom = 195.0
+rotation = -1.5708
+
+[node name="CheckButton" type="CheckButton" parent="CheckButton3"]
+offset_left = 119.0
+offset_top = 662.0
+offset_right = 163.0
+offset_bottom = 686.0
+
+[node name="CheckButton2" type="CheckButton" parent="CheckButton3"]
+offset_left = 59.0
+offset_top = 662.0
+offset_right = 103.0
+offset_bottom = 686.0
+
+[node name="CheckButton3" type="CheckButton" parent="CheckButton3"]
+offset_top = 662.0
+offset_right = 44.0
+offset_bottom = 686.0

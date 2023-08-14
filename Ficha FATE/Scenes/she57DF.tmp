@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://p61lnr3670sg"]
+
+[ext_resource type="Script" path="res://Scripts/sheet.gd" id="1_6pnoa"]
+
+[node name="Ficha" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6pnoa")
+
+[node name="Identidade" type="Panel" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_right = 582.0
+offset_bottom = 194.0
+
+[node name="Name" type="TextEdit" parent="Identidade"]
+layout_mode = 2
+offset_left = 11.0
+offset_top = 7.0
+offset_right = 576.0
+offset_bottom = 47.0
+placeholder_text = "Nome"
+text_direction = 1
+
+[node name="Description" type="TextEdit" parent="Identidade"]
+layout_mode = 2
+offset_left = 11.0
+offset_top = 49.0
+offset_right = 576.0
+offset_bottom = 189.0
+placeholder_text = "Descrição"
+wrap_mode = 1
+
+[node name="Skills" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 207.0
+offset_right = 1151.0
+offset_bottom = 444.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Skills"]
+layout_mode = 0
+offset_right = 129.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="SkillGrid" type="GridContainer" parent="Skills/MarginContainer"]
+layout_mode = 2
+columns = 5
+
+[node name="Button" type="Button" parent="Skills"]
+layout_mode = 0
+offset_left = 794.0
+offset_top = -36.0
+offset_right = 828.0
+offset_bottom = -5.0
+text = "+"
+
+[connection signal="button_up" from="Skills/Button" to="." method="_on_button_button_up"]

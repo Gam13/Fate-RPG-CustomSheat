@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://byutp1l561u3r"]
+
+[node name="Identidade" type="Panel"]
+clip_contents = true
+custom_minimum_size = Vector2(583, 0)
+anchors_preset = -1
+anchor_right = 0.506
+anchor_bottom = 0.298
+offset_right = 0.0879517
+offset_bottom = -0.104004
+
+[node name="Name" type="TextEdit" parent="."]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+offset_left = 11.0
+offset_top = 7.0
+offset_right = 576.0
+offset_bottom = 47.0
+placeholder_text = "Nome"
+text_direction = 1
+
+[node name="Description" type="TextEdit" parent="."]
+layout_mode = 2
+offset_left = 11.0
+offset_top = 49.0
+offset_right = 576.0
+offset_bottom = 189.0
+placeholder_text = "Descrição"
+wrap_mode = 1

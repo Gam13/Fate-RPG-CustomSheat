@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp8essu7p3ujt"]
+
+[sub_resource type="GDScript" id="GDScript_1sicq"]
+resource_name = "ChangeButtonNumber"
+script/source = "extends PanelContainer
+@onready var button = $Button
+
+func updateButton(Number : int) -> void:
+	button.text = str(Number)
+"
+
+[node name="StressBox" type="PanelContainer"]
+custom_minimum_size = Vector2(45, 45)
+script = SubResource("GDScript_1sicq")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+toggle_mode = true

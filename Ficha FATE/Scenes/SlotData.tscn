@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://djn1a7htygmrk"]
+
+[ext_resource type="Script" path="res://Scripts/SlotData.gd" id="1_qp2yt"]
+[ext_resource type="PackedScene" uid="uid://dbs1o4gkl4u1c" path="res://Scenes/SkillSlot.tscn" id="2_fi7ne"]
+
+[node name="SlotData" type="PanelContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(158, 40)
+offset_right = 160.0
+offset_bottom = 40.0
+script = ExtResource("1_qp2yt")
+
+[node name="SkillSlot" parent="." instance=ExtResource("2_fi7ne")]
+visible = false
+layout_mode = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="gui_input" from="SkillSlot" to="." method="_on_skill_slot_gui_input"]
