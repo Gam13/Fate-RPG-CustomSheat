@@ -1,10 +1,42 @@
-[gd_scene format=3 uid="uid://dqyveldgmkrao"]
+[gd_scene load_steps=2 format=3 uid="uid://dqyveldgmkrao"]
+
+[sub_resource type="GDScript" id="GDScript_trgvr"]
+resource_name = "Consequence"
+script/source = "extends Panel
+@onready var leve = $VBoxContainer/SplitContainer/leve
+@onready var leve_2 = $VBoxContainer/SplitContainer/leve2
+@onready var moderada = $VBoxContainer/SplitContainer2/moderada
+@onready var moderada_2 = $VBoxContainer/SplitContainer2/moderada2
+@onready var grave = $VBoxContainer/SplitContainer3/grave
+@onready var grave_2 = $VBoxContainer/SplitContainer3/grave2
+
+
+func get_data() -> Array:
+	var data : Array[String]
+	data.append(leve.text)
+	data.append(leve_2.text)
+	data.append(moderada.text)
+	data.append(moderada_2.text)
+	data.append(grave.text)
+	data.append(grave_2.text)
+	return data
+
+
+func load_data(caracter_data : Array) ->void:
+	leve.text = caracter_data[0]
+	leve_2.text = caracter_data[1]
+	moderada.text = caracter_data[2]
+	moderada_2.text = caracter_data[3]
+	grave.text = caracter_data[4]
+	grave_2.text = caracter_data[5]
+"
 
 [node name="Consequence" type="Panel"]
 offset_left = 464.0
 offset_top = 455.0
 offset_right = 1152.0
 offset_bottom = 648.0
+script = SubResource("GDScript_trgvr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -87,18 +119,21 @@ offset_bottom = 195.0
 rotation = -1.5708
 
 [node name="CheckButton" type="CheckButton" parent="CheckButton3"]
+layout_mode = 0
 offset_left = 119.0
 offset_top = 662.0
 offset_right = 163.0
 offset_bottom = 686.0
 
 [node name="CheckButton2" type="CheckButton" parent="CheckButton3"]
+layout_mode = 0
 offset_left = 59.0
 offset_top = 662.0
 offset_right = 103.0
 offset_bottom = 686.0
 
 [node name="CheckButton3" type="CheckButton" parent="CheckButton3"]
+layout_mode = 0
 offset_top = 662.0
 offset_right = 44.0
 offset_bottom = 686.0

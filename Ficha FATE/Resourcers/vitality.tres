@@ -4,5 +4,4 @@
 
 [resource]
 script = ExtResource("1_3iruc")
-name = "Vitalidade"
-value = 0
+name = "Vitality"

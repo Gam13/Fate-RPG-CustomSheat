@@ -17,8 +17,5 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="Button Label" type="Label" parent="MarginContainer/PanelContainer"]
+[node name="Button Label" type="Label" parent="MarginContainer"]
 layout_mode = 2

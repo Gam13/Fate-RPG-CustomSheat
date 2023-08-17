@@ -114,3 +114,10 @@ func chkIndex(index : int) -> skill_data:
 		skillSlot = Avarage[index- 20]
 
 	return skillSlot
+
+func load_skills(loaded_data : skillList) -> void:
+	Avarage = loaded_data.Avarage
+	Fair = loaded_data.Fair
+	Good = loaded_data.Good
+	Great = loaded_data.Great
+	Superb = loaded_data.Superb

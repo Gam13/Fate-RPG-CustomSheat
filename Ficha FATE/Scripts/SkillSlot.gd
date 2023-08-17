@@ -1,6 +1,6 @@
 extends PanelContainer
 
-@onready var button = $"MarginContainer/PanelContainer/Button Label"
+@onready var button = $"MarginContainer/Button Label"
 
 
 func updateButton(Skill_Name : String) -> void:

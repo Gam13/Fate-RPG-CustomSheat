@@ -71,11 +71,11 @@ offset_top = -42.0
 offset_right = 727.0
 offset_bottom = -8.0
 item_count = 3
-popup/item_0/text = "Criar uma Nova Skill"
+popup/item_0/text = "Create NewSkill"
 popup/item_0/id = 0
-popup/item_1/text = "Criar Vitalidade"
+popup/item_1/text = "Create Vitality"
 popup/item_1/id = 1
-popup/item_2/text = "Criar Vontade"
+popup/item_2/text = "Create Will"
 popup/item_2/id = 2
 script = SubResource("GDScript_f4duq")
 

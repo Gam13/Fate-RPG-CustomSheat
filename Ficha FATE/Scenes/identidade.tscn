@@ -1,4 +1,21 @@
-[gd_scene format=3 uid="uid://byutp1l561u3r"]
+[gd_scene load_steps=2 format=3 uid="uid://byutp1l561u3r"]
+
+[sub_resource type="GDScript" id="GDScript_qc55v"]
+resource_name = "identidade"
+script/source = "extends Panel
+@onready var caracterName = $Name
+@onready var description = $Description
+
+func get_data() -> Array:
+	var data : Array[String]
+	data.append(caracterName.text)
+	data.append(description.text)
+	return data
+
+func load_data(caracter_data : Array) ->void:
+	caracterName.text = caracter_data[0]
+	description.text = caracter_data[1]
+"
 
 [node name="Identidade" type="Panel"]
 clip_contents = true
@@ -8,6 +25,7 @@ anchor_right = 0.506
 anchor_bottom = 0.298
 offset_right = 0.0879517
 offset_bottom = -0.104004
+script = SubResource("GDScript_qc55v")
 
 [node name="Name" type="TextEdit" parent="."]
 custom_minimum_size = Vector2(0, 40)
@@ -16,7 +34,7 @@ offset_left = 11.0
 offset_top = 7.0
 offset_right = 576.0
 offset_bottom = 47.0
-placeholder_text = "Nome"
+placeholder_text = "Name"
 text_direction = 1
 
 [node name="Description" type="TextEdit" parent="."]
@@ -25,5 +43,5 @@ offset_left = 11.0
 offset_top = 49.0
 offset_right = 576.0
 offset_bottom = 189.0
-placeholder_text = "Descrição"
+placeholder_text = "Description"
 wrap_mode = 1

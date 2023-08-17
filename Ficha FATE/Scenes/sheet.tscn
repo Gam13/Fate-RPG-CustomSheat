@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://p61lnr3670sg"]
+[gd_scene load_steps=8 format=3 uid="uid://p61lnr3670sg"]
 
 [ext_resource type="Script" path="res://Scripts/sheet.gd" id="1_6pnoa"]
 [ext_resource type="PackedScene" uid="uid://byutp1l561u3r" path="res://Scenes/identidade.tscn" id="2_2ybdy"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://3cac4hiom7nq" path="res://Scenes/skills.tscn" id="2_k5ebw"]
 [ext_resource type="PackedScene" uid="uid://cdy28apujwlgv" path="res://Scenes/aspects.tscn" id="4_mpr8a"]
 [ext_resource type="PackedScene" uid="uid://dqyveldgmkrao" path="res://Scenes/consequence.tscn" id="5_xlox4"]
+
+[sub_resource type="Theme" id="Theme_5jhpy"]
+Panel/styles/panel = null
 
 [node name="Ficha" type="Control"]
 layout_mode = 3
@@ -87,6 +90,37 @@ layout_mode = 0
 offset_right = 26.0
 offset_bottom = 25.0
 
+[node name="Load" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.892
+anchor_top = 0.009
+anchor_right = 0.993
+anchor_bottom = 0.071
+offset_left = 0.416016
+offset_top = 0.168
+offset_right = 0.0639648
+offset_bottom = -0.00800323
+theme = SubResource("Theme_5jhpy")
+text = "Load Caracter"
+
+[node name="Save" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.892
+anchor_top = 0.076
+anchor_right = 0.993
+anchor_bottom = 0.137
+offset_left = 0.416016
+offset_top = -0.248005
+offset_right = 0.0639648
+offset_bottom = 0.223991
+text = "Save Caracter"
+
 [connection signal="trashPressed" from="Skills" to="." method="_on_skills_trash_pressed"]
 [connection signal="update_stress" from="Skills" to="." method="_on_skills_update_stress"]
 [connection signal="text_set" from="EditSkillName" to="." method="_on_edit_skill_name_text_set"]
+[connection signal="pressed" from="Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
